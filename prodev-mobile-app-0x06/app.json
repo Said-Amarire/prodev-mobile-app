@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "prodev-mobile-app-0x03",
+    "slug": "prodev-mobile-app-0x03",
+    "version": "1.0.0",
+    "sdkVersion": "54.0.0",
+    "platforms": ["ios","android"],
+    "assetBundlePatterns": ["**/*"]
+  }
+}
