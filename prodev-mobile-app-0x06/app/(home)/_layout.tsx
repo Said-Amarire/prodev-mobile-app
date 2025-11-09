@@ -1,11 +1,13 @@
-import { AntDesign, EvilIcons, Feather, FontAwesome, Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
+import { Ionicons, Feather } from "@expo/vector-icons";
+import { View, Text } from "react-native";
 
-const HomeRootLayout = () => {
+export default function Layout() {
   return (
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: "#34967C",
+        tabBarInactiveTintColor: "gray",
         headerShown: false,
       }}
     >
@@ -13,8 +15,8 @@ const HomeRootLayout = () => {
         name="index"
         options={{
           title: "Home",
-          tabBarIcon: ({ color }) => (
-            <AntDesign name="home" size={24} color={color} />
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="home-outline" color={color} size={size} />
           ),
         }}
       />
@@ -22,9 +24,8 @@ const HomeRootLayout = () => {
         name="search"
         options={{
           title: "Search",
-          headerShown: true,
-          tabBarIcon: ({ color }) => (
-            <Feather name="search" size={24} color={color} />
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="search-outline" color={color} size={size} />
           ),
         }}
       />
@@ -32,9 +33,8 @@ const HomeRootLayout = () => {
         name="saved"
         options={{
           title: "Saved",
-          headerShown: true,
-          tabBarIcon: ({ color }) => (
-            <EvilIcons name="heart" size={27} color={color} />
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="bookmark-outline" color={color} size={size} />
           ),
         }}
       />
@@ -42,25 +42,21 @@ const HomeRootLayout = () => {
         name="inbox"
         options={{
           title: "Inbox",
-          headerShown: true,
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="chatbubbles-outline" size={24} color={color} />
+          tabBarIcon: ({ color, size }) => (
+            <Feather name="message-square" color={color} size={size} />
           ),
         }}
       />
-      {/* ✅ هذا هو التعديل المطلوب */}
       <Tabs.Screen
         name="profile"
         options={{
           title: "Profile",
-          // تمت إزالة headerShown من هنا فقط
-          tabBarIcon: ({ color }) => (
-            <FontAwesome name="user-o" size={24} color={color} />
+          // ✅ تمت إزالة "headerShown: false" من هنا كما طلب المشروع
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="person-outline" color={color} size={size} />
           ),
         }}
       />
     </Tabs>
   );
-};
-
-export default HomeRootLayout;
+}
