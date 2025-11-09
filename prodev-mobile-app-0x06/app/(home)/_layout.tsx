@@ -1,3 +1,12 @@
+<Tabs.Screen name="profile" options={{
+  title: 'Profile',
+  tabBarIcon: ({ color }) => <FontAwesome name="user-o" size={24} color="black" />
+}} />
+
+
+
+
+
 import { AntDesign, EvilIcons, Feather, FontAwesome, Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 
