@@ -51,7 +51,6 @@ export default function Layout() {
         name="profile"
         options={{
           title: "Profile",
-          // ✅ تمت إزالة "headerShown: false" من هنا كما طلب المشروع
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="person-outline" color={color} size={size} />
           ),
